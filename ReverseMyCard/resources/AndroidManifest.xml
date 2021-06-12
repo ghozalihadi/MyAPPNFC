@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="46" android:versionName="1.12" package="com.roaddogssoftware.cardapp" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="25"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <application android:theme="@style/AppTheme.NoActionBar" android:label="@string/app_name" android:icon="@mipmap/ic_launcher5_dark" android:allowBackup="true" android:supportsRtl="true">
+        <activity android:label="@string/app_name" android:name="com.roaddogssoftware.cardapp.MainActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <service android:name="com.roaddogssoftware.cardapp.PaymentService" android:permission="android.permission.BIND_NFC_SERVICE" android:exported="true">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.nfc.cardemulation.host_apdu_service" android:resource="@xml/aid_list"/>
+        </service>
+        <activity android:theme="@style/LaunchScreen" android:label="@string/app_name" android:name="com.roaddogssoftware.cardapp.LaunchScreenActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

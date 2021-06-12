@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_gravity="top" android:orientation="vertical" android:background="@drawable/round_rect_white" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:padding="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/ic_launcher5_dark"/>
+        <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/colorPrimary" android:layout_gravity="center" android:id="@+id/cardName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name_and_version"/>
+    </LinearLayout>
+    <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:onClick="selectPicture">
+        <ImageView android:id="@+id/imageViewCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/card_empty" android:scaleType="centerInside" android:adjustViewBounds="true"/>
+        <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:layout_gravity="bottom" android:id="@+id/textNameOnCard" android:paddingLeft="10dp" android:paddingBottom="40dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NAME ON CARD"/>
+        <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:typeface="sans" android:layout_gravity="bottom" android:id="@+id/textCardExp" android:paddingLeft="180dp" android:paddingBottom="58dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2015/10"/>
+        <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:layout_gravity="bottom" android:id="@+id/textCardNumber" android:paddingLeft="10dp" android:paddingBottom="110dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="**** 1234"/>
+    </FrameLayout>
+    <LinearLayout android:layout_gravity="center" android:padding="30dp" android:layout_width="wrap_content" android:layout_height="130dp">
+        <ProgressBar android:id="@+id/progressBar" android:padding="10dp" android:layout_width="60dp" android:layout_height="match_parent"/>
+        <ImageView android:id="@+id/imageCheck" android:padding="10dp" android:visibility="gone" android:layout_width="60dp" android:layout_height="match_parent" android:src="@drawable/ic_check_red_70dp"/>
+        <TextView android:textSize="20sp" android:textStyle="bold" android:textColor="@color/colorPrimary" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/payment_processing"/>
+    </LinearLayout>
+</LinearLayout>

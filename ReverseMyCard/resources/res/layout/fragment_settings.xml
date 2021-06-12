@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.support.p019v7.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <CheckBox android:textSize="16sp" android:id="@+id/checkBoxShowAll" android:padding="20dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:button="@null" android:text="@string/drawer_show_all_info" android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"/>
+    </android.support.p019v7.widget.CardView>
+    <android.support.p019v7.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <CheckBox android:textSize="16sp" android:id="@+id/checkBoxPassToStart" android:padding="20dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:button="@null" android:text="@string/settings_pass_to_start" android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"/>
+    </android.support.p019v7.widget.CardView>
+    <android.support.p019v7.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <CheckBox android:textSize="16sp" android:id="@+id/checkBoxSounds" android:padding="20dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:button="@null" android:text="@string/settings_sounds" android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"/>
+    </android.support.p019v7.widget.CardView>
+    <android.support.p019v7.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <CheckBox android:textSize="16sp" android:id="@+id/text_set_pass" android:padding="20dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:button="@null" android:text="@string/set_password" android:onClick="myClickMethod"/>
+    </android.support.p019v7.widget.CardView>
+    <android.support.p019v7.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <CheckBox android:enabled="false" android:textSize="16sp" android:id="@+id/text_clear_pass" android:padding="20dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:button="@null" android:text="@string/clear_password"/>
+    </android.support.p019v7.widget.CardView>
+    <android.support.p019v7.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <CheckBox android:textSize="16sp" android:textColor="#000000" android:id="@+id/text_reset" android:padding="20dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:button="@null" android:text="@string/button_full_reset"/>
+    </android.support.p019v7.widget.CardView>
+</LinearLayout>

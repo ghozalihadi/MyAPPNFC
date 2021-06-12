@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:padding="10dp" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:paddingBottom="5dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:textSize="16sp" android:textColor="#ffffff" android:id="@+id/button_check" android:background="@drawable/round_rect_selected" android:layout_width="0dp" android:layout_height="40dp" android:layout_margin="5dp" android:text="Check" android:layout_weight="1" android:onClick="checkCardData" style="?android:attr/buttonStyleSmall"/>
+        <Button android:textSize="16sp" android:textColor="#ffffff" android:id="@+id/button_picture" android:background="@drawable/round_rect_selected" android:layout_width="0dp" android:layout_height="40dp" android:layout_margin="5dp" android:text="Picture" android:layout_weight="1" android:onClick="selectPicture" style="?android:attr/buttonStyleSmall"/>
+        <Button android:textSize="16sp" android:textColor="#ffffff" android:id="@+id/button_add" android:background="@drawable/round_rect_selected" android:layout_width="0dp" android:layout_height="40dp" android:layout_margin="5dp" android:text="Save Card" android:layout_weight="1" android:onClick="addThisCard" style="?android:attr/buttonStyleSmall"/>
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/boxAdd" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@+id/swipe_data_layout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="5dp" android:layout_below="@+id/textView2" android:layout_alignEnd="@+id/swipe_name">
+            <LinearLayout android:orientation="vertical" android:id="@+id/button_clear_layout" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="5dp" android:layout_marginEnd="5dp">
+                <Button android:textColor="#ffffff" android:layout_gravity="center" android:id="@+id/button_clear_button" android:background="@drawable/ic_clear_black_24dp" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/buttonStyleSmall"/>
+                <TextView android:textSize="15sp" android:textColor="#ff000000" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="@string/track_data_clear" android:textAlignment="center"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@+id/button_edit_layout" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="5dp" android:layout_marginEnd="5dp">
+                <Button android:textColor="#ffffff" android:layout_gravity="center" android:id="@+id/button_edit_button" android:background="@drawable/ic_edit_black_24dp" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/buttonStyleSmall"/>
+                <TextView android:textSize="15sp" android:textColor="#ff000000" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="@string/track_data_edit" android:textAlignment="center"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@+id/button_paste_layout" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="5dp" android:layout_marginEnd="5dp">
+                <Button android:textColor="#ffffff" android:layout_gravity="center" android:id="@+id/button_paste_button" android:background="@drawable/ic_content_paste_black_24dp" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/buttonStyleSmall"/>
+                <TextView android:textSize="15sp" android:textColor="#ff000000" android:layout_gravity="center" android:id="@+id/button_paste_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="@string/track_data_paste" android:textAlignment="center"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@+id/button_mag_card_layout" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="5dp" android:layout_marginEnd="5dp">
+                <Button android:textColor="#ffffff" android:layout_gravity="center" android:id="@+id/button_mag_button" android:background="@drawable/ic_credit_card_black" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/buttonStyleSmall"/>
+                <TextView android:textSize="15sp" android:textColor="#ff000000" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="@string/track_data_mag" android:textAlignment="center"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@+id/button_scan_layout" android:visibility="gone" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="5dp" android:layout_marginEnd="5dp">
+                <Button android:textColor="#ffffff" android:layout_gravity="center" android:id="@+id/button_scan_button" android:background="@drawable/ic_nfc2" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="5dp" style="?android:attr/buttonStyleSmall"/>
+                <TextView android:textSize="15sp" android:textColor="#ff000000" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="@string/track_data_nfc" android:textAlignment="center"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:id="@+id/textViewTrackDataStatus" android:background="@color/warning_yellow" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/warning_invalid_card" android:layout_below="@+id/swipe_cvv" android:layout_alignBottom="@+id/textView2" android:textAlignment="center" android:layout_toEndOf="@+id/textView2"/>
+        <TextView android:textStyle="bold" android:textColor="@color/colorPrimaryDark" android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/card_data" android:layout_below="@+id/swipe_cvv" android:paddingStart="5sp" android:paddingEnd="10dp" android:layout_alignParentStart="true"/>
+        <EditText android:id="@+id/swipe_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:inputType="textPersonName" android:layout_toEndOf="@+id/textView3"/>
+        <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="@color/colorPrimaryDark" android:id="@+id/textView3" android:padding="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/card_name" android:layout_alignParentStart="true"/>
+        <EditText android:id="@+id/edit_name_on_card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/swipe_name" android:inputType="textPersonName" android:layout_toEndOf="@+id/textView5"/>
+        <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="@color/colorPrimaryDark" android:id="@+id/textView5" android:padding="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/card_name_on_card" android:layout_below="@+id/swipe_name" android:layout_alignParentStart="true"/>
+        <EditText android:id="@+id/swipe_cvv" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/edit_name_on_card" android:inputType="number" android:layout_toEndOf="@+id/textView4"/>
+        <TextView android:textSize="15sp" android:textStyle="bold" android:textColor="@color/colorPrimaryDark" android:id="@+id/textView4" android:padding="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/card_cvv_opt" android:layout_below="@+id/edit_name_on_card" android:layout_alignParentStart="true"/>
+    </RelativeLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <FrameLayout android:layout_gravity="center_horizontal" android:id="@+id/layout_cover" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:textColor="@color/colorAccent" android:layout_gravity="center" android:paddingBottom="150dp" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="wrap_content" android:textAlignment="center"/>
+                <Button android:textColor="#ffffff" android:layout_gravity="center" android:id="@+id/button_add_pic" android:background="@drawable/add_image" android:layout_width="150dp" android:layout_height="95dp" android:stateListAnimator="@null" style="?android:attr/buttonStyleSmall"/>
+                <ImageView android:layout_gravity="center_horizontal" android:id="@+id/imageViewCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:scaleType="centerInside" android:adjustViewBounds="true"/>
+                <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:layout_gravity="bottom" android:id="@+id/textCardName" android:paddingLeft="20dp" android:paddingBottom="20dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NAME ON CARD"/>
+                <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:typeface="sans" android:layout_gravity="bottom" android:id="@+id/textCardExp" android:paddingLeft="150dp" android:paddingBottom="43dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2015/10"/>
+                <TextView android:textAppearance="?android:attr/textAppearanceMedium" android:layout_gravity="bottom" android:id="@+id/textCardNumber" android:paddingLeft="20dp" android:paddingBottom="90dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="**** 1234"/>
+            </FrameLayout>
+            <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="1dp" android:stretchColumns="1" android:shrinkColumns="1">
+                <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="15dp" android:textStyle="bold" android:textColor="@color/colorPrimaryDark" android:paddingLeft="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BRAND: "/>
+                    <TextView android:id="@+id/card_brand" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=""/>
+                </TableRow>
+                <TableRow android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="15dp" android:textStyle="bold" android:textColor="@color/colorPrimary" android:paddingLeft="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TYPE: "/>
+                    <TextView android:id="@+id/card_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=""/>
+                </TableRow>
+                <TableRow android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="15dp" android:textStyle="bold" android:textColor="@color/colorPrimary" android:paddingLeft="5sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ISSUER: "/>
+                    <TextView android:id="@+id/card_issuer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=""/>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

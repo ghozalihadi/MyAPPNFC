@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item android:icon="@drawable/ic_credit_card_black" android:id="@+id/nav_home" android:title="@string/drawer_home"/>
+        <item android:icon="@drawable/ic_list_black" android:id="@+id/nav_card_list" android:title="@string/drawer_card_list"/>
+        <item android:icon="@drawable/ic_add" android:id="@+id/nav_add_card" android:title="@string/drawer_add_card"/>
+        <item android:icon="@drawable/ic_settings" android:id="@+id/nav_settings" android:title="@string/drawer_settings"/>
+    </group>
+    <item android:id="@+id/nav_set_as_default_title" android:title="@string/drawer_is_not_default">
+        <menu>
+            <item android:icon="@drawable/ic_check_box_off" android:id="@+id/nav_set_as_default_pay" android:title="@string/drawer_set_as_default"/>
+            <item android:icon="@drawable/ic_alert" android:id="@+id/warning_nfc" android:visible="false" android:title="@string/warning_nfc"/>
+            <item android:id="@+id/spacer" android:title=""/>
+        </menu>
+    </item>
+</menu>

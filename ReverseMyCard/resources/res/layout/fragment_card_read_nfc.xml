@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center" android:orientation="vertical" android:background="@drawable/round_rect_white" android:padding="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <TextView android:textColor="@color/colorPrimaryDark" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="10dp" android:text="@string/card_read_nfc_title" style="@style/TextAppearance.AppCompat.Medium"/>
+    <ImageView android:layout_gravity="center" android:id="@+id/imageViewCard" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/nfc_reader_edit" android:scaleType="centerInside" android:adjustViewBounds="true"/>
+    <TextView android:textColor="@color/colorPrimaryDark" android:gravity="center" android:id="@+id/status" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" style="@style/TextAppearance.AppCompat.Medium"/>
+    <TextView android:id="@+id/track_data" android:layout_width="match_parent" android:layout_height="wrap_content" android:lines="3"/>
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Button android:id="@+id/buttonCancel" android:background="@drawable/ic_close_black_24dp" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginStart="15dp" android:layout_marginEnd="15dp"/>
+        <Button android:id="@+id/buttonSave" android:background="@drawable/ic_check_gray_24dp" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginStart="15dp" android:layout_marginEnd="15dp"/>
+    </LinearLayout>
+</LinearLayout>
